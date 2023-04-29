@@ -49,20 +49,23 @@
 
                 <ImageView
                     android:id="@+id/skyImg"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/temperatureTv"/>
 
                 <TextView
                     android:id="@+id/temperatureTv"
                     style="@style/TitleTextBoldBlackStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/skyImg"
                     tools:text="12C"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

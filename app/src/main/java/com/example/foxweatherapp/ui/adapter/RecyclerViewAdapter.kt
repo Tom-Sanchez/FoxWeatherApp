@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foxweatherapp.R
 import com.example.foxweatherapp.data.model.ForecastWeather
 import com.example.foxweatherapp.databinding.ItemForecastWeatherBinding
+import com.example.foxweatherapp.utils.loadImage
 
 class RecyclerViewAdapter(val items: MutableList<ForecastWeather>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
@@ -26,6 +27,7 @@ class RecyclerViewAdapter(val items: MutableList<ForecastWeather>) : RecyclerVie
         fun bind(item: ForecastWeather) {
             with(binding) {
                 dayTv.text = item.shortDay
+                skyImg.loadImage(item.skyCodeDay)
                 lowTv.text = itemView.context.getString(R.string.temperature_display, item.low, item.degType)
                 highTv.text = itemView.context.getString(R.string.temperature_display, item.high, item.degType)
             }

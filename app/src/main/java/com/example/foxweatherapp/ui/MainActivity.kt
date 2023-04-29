@@ -1,9 +1,12 @@
 package com.example.foxweatherapp.ui
 
+import android.content.Context
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import com.example.foxweatherapp.R
 import com.example.foxweatherapp.databinding.ActivityMainBinding
 import com.example.foxweatherapp.ui.adapter.ViewPagerAdapter
+import com.example.foxweatherapp.utils.hideKeyboard
 import com.example.foxweatherapp.viewmodels.WeatherViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,6 +28,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.button.setOnClickListener {
             val query = binding.searchView.query.toString()
             weatherViewModel.loadCurrentWeather(query)
+
+            hideKeyboard()
         }
 
         setupViewPager()

@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
 import com.example.foxweatherapp.R
 import com.example.foxweatherapp.data.model.Weather
+import com.example.foxweatherapp.utils.loadImage
 
 class CurrentWeatherItem @JvmOverloads constructor(
     context: Context,
@@ -46,16 +47,7 @@ class CurrentWeatherItem @JvmOverloads constructor(
             humidityTextView.text = "${context.getString(R.string.humidity_display, humidity)}%"
             windTextView.text = context.getString(R.string.wind_display, wind)
             temperatureTextView.text = context.getString(R.string.temperature_display, temperature, degType)
-            //setSkyImage(skyCode)
+            skyImg.loadImage(skyCode)
         }
     }
-
-//    private fun setSkyImage(code: String? = null) {
-//        val imageViewTarget : Glide
-//        Glide.with(context)
-//            .asGif()
-//            .load("http://blob.weather.microsoft.com/static/weather4/en-us/law/$code.gif")
-//            .centerCrop()
-//            .into(DrawableIm)
-//    }
 }
