@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_city">Entrer la ville</string>
+    <string name="search">Recherche</string>
+    <string name="current">actuelle</string>
+    <string name="forecast">prévisions</string>
+    <string name="day_time_display">%1$s %2$s</string>
+    <string name="feels_like_display">ressentie: %1$s °%2$s</string>
+    <string name="humidity_display">humidité: %1$s</string>
+    <string name="wind_display">vent: %1$s</string>
+    <string name="temperature_display">%1$s °%2$s</string>
+    <string name="error_occured">Une erreur s\'est produite, veuillez réessayer</string>
+</resources>

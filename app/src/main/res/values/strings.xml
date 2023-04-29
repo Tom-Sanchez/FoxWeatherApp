@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">FoxWeatherApp</string>
+    <string name="app_name" translatable="false">FoxWeatherApp</string>
+    <string name="enter_city">Enter City</string>
+    <string name="search">Search</string>
+    <string name="current">current</string>
+    <string name="forecast">forecast</string>
+    <string name="day_time_display">%1$s %2$s</string>
+    <string name="feels_like_display">feels like: %1$s °%2$s</string>
+    <string name="humidity_display">humidity: %1$s</string>
+    <string name="wind_display">wind: %1$s</string>
+    <string name="temperature_display">%1$s °%2$s</string>
+    <string name="error_occured">An error occurred, please retry</string>
 </resources>

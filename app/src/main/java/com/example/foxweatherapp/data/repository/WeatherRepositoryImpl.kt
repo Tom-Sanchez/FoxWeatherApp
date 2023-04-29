@@ -1,5 +1,6 @@
 package com.example.foxweatherapp.data.repository
 
+import com.example.foxweatherapp.data.model.ForecastWeather
 import com.example.foxweatherapp.data.model.Weather
 import com.example.foxweatherapp.data.remote.ApiService
 import io.reactivex.Observable
@@ -12,5 +13,9 @@ class WeatherRepositoryImpl(
 
     override fun getCurrentWeather(loc: String?, deg: String?): Observable<Weather> {
         return apiService.getCurrentWeather(loc, deg)
+    }
+
+    override fun getForecastWeather(loc: String?, deg: String?): Observable<List<ForecastWeather>> {
+        return apiService.getForecastWeather(loc, deg)
     }
 }

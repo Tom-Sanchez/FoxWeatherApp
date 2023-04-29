@@ -1,8 +1,6 @@
 package com.example.foxweatherapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.foxweatherapp.R
 import com.example.foxweatherapp.databinding.ActivityMainBinding
 import com.example.foxweatherapp.ui.adapter.ViewPagerAdapter
@@ -11,8 +9,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 val titleArrays = arrayOf(
-    "current",
-    "forecast"
+    R.string.current,
+    R.string.forecast
 )
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -25,7 +23,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         super.onCreate(savedInstanceState)
 
         binding.button.setOnClickListener {
-            weatherViewModel.loadCurrentWeather(binding.searchView.query.toString())
+            val query = binding.searchView.query.toString()
+            weatherViewModel.loadCurrentWeather(query)
         }
 
         setupViewPager()
@@ -34,7 +33,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun setupViewPager() {
         binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = titleArrays[position]
+            tab.text = getString(titleArrays[position])
         }.attach()
     }
 }

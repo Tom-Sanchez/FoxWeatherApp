@@ -1,5 +1,6 @@
 package com.example.foxweatherapp.data.remote
 
+import com.example.foxweatherapp.data.model.ForecastWeather
 import com.example.foxweatherapp.data.model.Weather
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -18,4 +19,10 @@ interface ApiService {
         @Query("loc") loc: String?,
         @Query("deg") deg: String?
     ): Observable<Weather>
+
+    @GET("forecast")
+    fun getForecastWeather(
+        @Query("loc") loc: String?,
+        @Query("deg") deg: String?
+    ): Observable<List<ForecastWeather>>
 }
